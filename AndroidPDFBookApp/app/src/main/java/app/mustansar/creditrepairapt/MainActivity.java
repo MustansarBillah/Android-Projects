@@ -1,29 +1,24 @@
 package app.mustansar.creditrepairapt;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
-import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imageView;
@@ -37,32 +32,26 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Share This Book");
         builder.setIcon(getResources().getDrawable(R.drawable.ic_round_menu_book_24, getTheme()));
         builder.setMessage("Spread Knowledge.!");
-        builder.setPositiveButton("Share", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+        builder.setPositiveButton("Share", (dialog, id) -> {
 
-                Intent intentInvite = new Intent(Intent.ACTION_SEND);
-                final String appPackageName=getApplicationContext().getPackageName();
-                String strAppLink;
-                try {
-                    strAppLink="https://play.google.com/store/apps/details?id="+appPackageName;
-                }
-                catch (android.content.ActivityNotFoundException anfe)
-                {
-                    strAppLink="https://play.google.com/store/apps/details?id="+appPackageName;
-                }
-                intentInvite.setType("text/Link");
-                String body = "Download This App And Read Your Favourite Books."+"\n"+""+strAppLink;
-                String subject = "Book";
-                intentInvite.putExtra(Intent.EXTRA_SUBJECT, subject);
-                intentInvite.putExtra(Intent.EXTRA_TEXT, body);
-                startActivity(Intent.createChooser(intentInvite, "Share using"));
+            Intent intentInvite = new Intent(Intent.ACTION_SEND);
+            final String appPackageName=getApplicationContext().getPackageName();
+            String strAppLink;
+            try {
+                strAppLink="https://play.google.com/store/apps/details?id="+appPackageName;
             }
-        });
-        builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                finish();
+            catch (android.content.ActivityNotFoundException anfe)
+            {
+                strAppLink="https://play.google.com/store/apps/details?id="+appPackageName;
             }
+            intentInvite.setType("text/Link");
+            String body = "Download This App And Read Your Favourite Books."+"\n"+""+strAppLink;
+            String subject = "Book";
+            intentInvite.putExtra(Intent.EXTRA_SUBJECT, subject);
+            intentInvite.putExtra(Intent.EXTRA_TEXT, body);
+            startActivity(Intent.createChooser(intentInvite, "Share using"));
         });
+        builder.setNegativeButton("Exit", (dialog, id) -> finish());
         builder.show();
     }
 
@@ -71,10 +60,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 // Initialize the Mobile Ads SDK.
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
+        MobileAds.initialize(this, initializationStatus -> {
         });
         FrameLayout adContainerView = findViewById(R.id.Main_ad_view_container);
         // Step 1 - Create an AdView and set the ad unit ID on it.
@@ -85,43 +71,28 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageView);
         switchCompat = findViewById(R.id.switch1);
-        imageView.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), pdfview.class);
-                startActivity(i);
-            }
+        imageView.setOnClickListener(v -> {
+            Intent i = new Intent(getApplicationContext(), pdfview.class);
+            startActivity(i);
         });
         switchCompat.setTextOff("Off");
         switchCompat.setTextOn("ON");
 
-        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switchCompat.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-                if (isChecked) {
-                    Toast.makeText(MainActivity.this, "Night Mode On", Toast.LENGTH_SHORT).show();
-                    imageView.setOnClickListener(new View.OnClickListener() {
+            if (isChecked) {
+                Toast.makeText(MainActivity.this, "Night Mode On", Toast.LENGTH_SHORT).show();
+                imageView.setOnClickListener(v -> {
+                    Intent i = new Intent(getApplicationContext(), NightActivity.class);
+                    startActivity(i);
+                }); }
 
-                        @Override
-                        public void onClick(View v) {
-                            Intent i = new Intent(getApplicationContext(), NightActivity.class);
-                            startActivity(i);
-                        }
-                    }); }
-
-                else {
-                    Toast.makeText(MainActivity.this, "Night Mode Off", Toast.LENGTH_SHORT).show();
-                    imageView.setOnClickListener(new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View v) {
-                            Intent i = new Intent(getApplicationContext(), pdfview.class);
-                            startActivity(i);
-                        }
-                    });
-                }
+            else {
+                Toast.makeText(MainActivity.this, "Night Mode Off", Toast.LENGTH_SHORT).show();
+                imageView.setOnClickListener(v -> {
+                    Intent i = new Intent(getApplicationContext(), pdfview.class);
+                    startActivity(i);
+                });
             }
         });
 
