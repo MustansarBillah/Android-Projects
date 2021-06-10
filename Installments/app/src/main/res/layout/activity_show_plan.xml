@@ -1,0 +1,190 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+ >
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="10sp"
+        android:fontFamily="@font/fredoka_one"
+        android:text="@string/plan_details"
+        android:textColor="#FDFDFD"
+        android:textSize="25sp">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_margin="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/cardbg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4sp"
+                android:layout_marginRight="4sp"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:text="@string/plan_name"
+                android:textColor="#101E7C"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/PlanNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:gravity="bottom"
+                android:textColor="#101E7C"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4sp"
+                android:layout_marginRight="4sp"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:text="@string/total_installments"
+                android:textColor="#101E7C"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/TotalInstallmentsTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:gravity="bottom"
+                android:textColor="#101E7C"
+                android:textSize="20sp"
+
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4sp"
+                android:layout_marginRight="4sp"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:text="@string/total_amount"
+                android:textColor="#040000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/TotalAmountTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:gravity="bottom"
+                android:textColor="#0B0000"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/NewCases_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4sp"
+                android:layout_marginRight="4sp"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:text="@string/plan_start_date"
+                android:textColor="#145977"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/StartDateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:gravity="bottom"
+                android:textColor="#145977"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4sp"
+                android:layout_marginRight="4sp"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:text="@string/members"
+                android:textColor="#145977"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/planMembers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/acme"
+                android:gravity="bottom"
+                android:textColor="#145977"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+</ScrollView>

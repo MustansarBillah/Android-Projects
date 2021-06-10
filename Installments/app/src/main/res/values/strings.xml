@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Instali</string>
+    <string name="start_new_installment_plan">Start New Installment Plan</string>
+
+
+    <string name="view_installments_plan">View Installments Plan</string>
+    <string name="add_new_member">Add New Member</string>
+    <string name="fullname">FullName</string>
+    <string name="email">Email</string>
+    <string name="phone_no">Phone No</string>
+    <string name="save">Save</string>
+    <string name="name_for_this_installment_plan">Name For This Installment Plan</string>
+    <string name="total_number_of_installments">Total Number Of Installments</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="start_date">Start Date</string>
+    <string name="submit">Submit</string>
+    <string name="plan_details">Plan Details</string>
+    <string name="plan_name">Plan Name</string>
+    <string name="total_installments">Total Installments</string>
+
+    <string name="plan_start_date">Plan Start Date</string>
+    <string name="members">Members:</string>
+    <string name="instali">Instali</string>
+    <string name="date_time">Date/Time</string>
+    <string name="start_new_installment">Start New Installment</string>
+    <string name="view_running_installment">View Running Installment</string>
+    <string name="add_members">Add Members</string>
+
+</resources>

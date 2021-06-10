@@ -1,0 +1,115 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+        >
+    <TextView
+
+        android:textColor="#FDFBFB"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/start_new_installment_plan">
+    </TextView>
+
+    <EditText
+        android:id="@+id/PlanNameET"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:background="@drawable/edittextbg"
+        android:padding="10dp"
+        android:fontFamily="@font/actor"
+        android:hint="@string/name_for_this_installment_plan"
+        android:inputType="textCapCharacters"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:autofillHints="">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/TotalInstallmentsET"
+        android:fontFamily="@font/actor"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:layout_margin="5sp"
+        android:background="@drawable/edittextbg"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/total_number_of_installments"
+        android:autofillHints="">
+    </EditText>
+    <EditText
+        android:id="@+id/TotalAmountET"
+        android:fontFamily="@font/actor"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:layout_margin="5sp"
+        android:background="@drawable/edittextbg"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/total_amount"
+        android:autofillHints="">
+    </EditText>
+    <EditText
+        android:fontFamily="@font/actor"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:id="@+id/StartDate"
+        android:autofillHints=""
+        android:inputType="date"
+        android:layout_margin="5sp"
+        android:background="@drawable/edittextbg"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/start_date"
+       >
+    </EditText>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_margin="5sp"
+        android:background="@drawable/edittextbg"
+
+         />
+
+        <TextView
+            android:id="@+id/AddNewMemberTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:text="@string/add_new_member"
+            android:textAllCaps="true"
+            android:textColor="#02158A"
+            android:layout_margin="10sp"
+            android:layout_gravity="center"
+            />
+    <Button
+        android:id="@+id/SubmitBT"
+        android:background="@drawable/buttonbg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/submit"
+        android:layout_marginBottom="10dp"
+        android:textColor="#F8F3F3">
+
+    </Button>
+</LinearLayout>
+</ScrollView>
