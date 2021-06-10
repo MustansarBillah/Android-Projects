@@ -1,0 +1,28 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#083E6E"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.airbnb.lottie.LottieAnimationView
+
+        android:layout_gravity="center"
+        android:id="@+id/animationView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:lottie_url="https://assets6.lottiefiles.com/packages/lf20_Loi97B.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fredoka_one"
+        android:text="@string/credit_repair_apt"
+        android:textColor="#F6F7F8"
+        android:textSize="30sp">
+
+    </TextView>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pdfview"
+    android:orientation="vertical">
+
+    <com.github.barteksc.pdfviewer.PDFView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pdfviewer"
+        android:outlineSpotShadowColor="#f000"
+        android:background="#1976D2">
+
+    </com.github.barteksc.pdfviewer.PDFView>
+    <FrameLayout
+        android:id="@+id/View_ad_view_container"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
